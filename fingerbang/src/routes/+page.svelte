@@ -1,4 +1,5 @@
 <!--This is the frontpage!-->
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<div class="banner">
+    <img alt="Fingerbang capsule" src="/images/main_capsule_fingerbang_steam.png"/>
+</div>
