@@ -12,11 +12,11 @@
 
 <style>
     footer {
-        background-color: #1f1f1f;
+        background-color: #010101;
         height:200px;
         width:100%;
         bottom:0;
-        position:absolute;
+        position:fixed;
         font-family: 'public pixel' !important;
         display:flex;
         align-items: center;

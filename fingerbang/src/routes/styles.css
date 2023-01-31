@@ -10,6 +10,20 @@ img {
     height:auto;
 }
 
+h1 {
+    font-family: 'public pixel';
+    font-size:2rem;
+}
+
+.intro {
+    width: 60%;
+    margin:0 auto;
+}
+
+article {
+    font-family:Arial, Helvetica, sans-serif
+}
+
 main {
     flex:1;
     display:flex;
@@ -22,8 +36,7 @@ main {
 
 body {
     margin: 0;
-    background-color: #555;
-    background-image: linear-gradient(#1f1f1f, #555);
+    background-color: #1f1f1f;;
     color:rgb(239, 239, 239);
 }
 
