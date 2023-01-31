@@ -10,18 +10,25 @@ img {
     height:auto;
 }
 
-h1 {
-    font-family: 'public pixel';
-    font-size:2rem;
+p {
+    text-align:left;
 }
 
-.intro {
+h1 {
+    font-family: 'public pixel';
+    font-size:1.8rem;
+    margin-bottom: 2rem;
+}
+
+#intro, #screenshots, #mail {
     width: 60%;
     margin:0 auto;
+    margin-top: 3rem;
+    margin-bottom:3rem;
 }
 
 article {
-    font-family:Arial, Helvetica, sans-serif
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 main {
@@ -29,6 +36,7 @@ main {
     display:flex;
     flex-direction: column;
     width: 100%;
+    height:auto;
     box-sizing: border-box;
     margin: 0 auto;
     text-align:center;
