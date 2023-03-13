@@ -5,6 +5,10 @@
     flex-direction: column;
 }
 
+ul, li {
+    list-style-type: none;
+}
+
 #page-container {
     position: relative;
     min-height: 100vh;
@@ -37,6 +41,13 @@ p {
 
 .ctrailer {
     margin-top: 8rem;
+}
+
+.normal {
+    margin-top: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 1rem;
 }
 
 h1 {

@@ -27,8 +27,7 @@
     </p>
 
     <h1>Features</h1>
-    <p>
-        list them here</p>
+    ...
 </article>
 
 <div id="screenshots-bg">
@@ -36,9 +35,7 @@
 <Carousel />
 </article></div>
 
-<article>
-    <h1>UGAUGAU</h1>
-</article>
+
 </div>
 
 </div>
