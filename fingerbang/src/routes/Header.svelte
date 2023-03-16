@@ -19,6 +19,9 @@
         <div class="navitem">
             <a href="/support">Support</a>
         </div>
+        <div class="navitem">
+            <a href="/anime">Anime</a>
+        </div>
     </div>
 
     <!--Play Free button-->
@@ -53,7 +56,7 @@ nav {
 #navitem-container {
     display:flex;
     flex-direction: row;
-    width: 500px;
+    width: 600px;
     justify-content: space-between;
     margin-right: 1rem;
     margin-left: 1rem;
