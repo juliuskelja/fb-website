@@ -34,6 +34,5 @@ declare module '*.svg?component' {
 	const content: string
 	export default content
   }
-  import anime from 'animejs/lib/anime.es.js';
 
 export {};

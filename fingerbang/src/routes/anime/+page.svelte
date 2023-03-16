@@ -1,7 +1,5 @@
-<script src="anime.min.js">
-import anime from "animejs";
-
-
+<script>
+  const anime = require('animejs');
 anime({
   targets: 'div',
   translateX: 250,
@@ -14,3 +12,4 @@ anime({
 <div>
     haab
 </div>
+
