@@ -1,6 +1,7 @@
 <script>
-  const anime = require('animejs');
-anime({
+  import anime from 'animejs/lib/anime.es.js';
+
+  anime({
   targets: 'div',
   translateX: 250,
   rotate: '1turn',
@@ -9,7 +10,4 @@ anime({
 });
 </script>
 
-<div>
-    haab
-</div>
-
+<div>Hello world</div>
