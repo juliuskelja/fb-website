@@ -22,6 +22,9 @@
         <div class="navitem">
             <a href="/anime">Anime</a>
         </div>
+        <div class="navitem">
+            <a href="/modal">Modal</a>
+        </div>
     </div>
 
     <!--Play Free button-->
