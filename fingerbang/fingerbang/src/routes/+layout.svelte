@@ -17,3 +17,14 @@
     <Footer />
 </div>
 </div>
+
+<div class="scrolling-image-container">
+    <div class="scrolling-image"></div>
+   </div>
+
+
+<style>
+    .scrolling-image-container {
+  overflow: hidden;
+}
+</style>

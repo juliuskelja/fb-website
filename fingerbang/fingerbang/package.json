@@ -41,6 +41,7 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
-		"animejs": "^3.2.1"
+		"animejs": "^3.2.1",
+		"svelte-modals": "^1.2.1"
 	}
 }
