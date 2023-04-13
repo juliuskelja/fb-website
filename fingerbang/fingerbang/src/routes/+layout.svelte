@@ -17,23 +17,26 @@
     <Footer />
 </div>
 </div>
-
 <div class="scrolling-image-container">
-    <div class="scrolling-image">
-        <img src="/images/mainmenu_placeholder.png" alt="background">
-    </div>
-   </div>
-
+    <div class="scrolling-image"></div>
+</div>
 
 <style>
 .scrolling-image-container {
-  overflow: hidden;
-  z-index:-1;
-    position:fixed;
+    overflow: hidden;
+}
+.scrolling-image {
+    z-index:-1;
     top:0;
-    background: url("/images/mainmenu_placeholder.png");
-    background-repeat: repeat-x;
-    width: 100%;
+    position: fixed;
+    width: 3200px; /* img width x2 */
     height: 100%;
+    background: url("/images/mainmenu_placeholder.png") repeat-x;
+    animation: verticAnim 20s linear infinite;
+}
+@keyframes verticAnim {
+    to {
+        transform: translate(-1600px);
+    }
 }
 </style>
