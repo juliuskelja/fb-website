@@ -1,63 +1,66 @@
 <script>
-	export let showModal; // boolean
-
-	let dialog; // HTMLDialogElement
-
-	$: if (dialog && showModal) dialog.showModal();
-</script>
-
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<dialog
-	bind:this={dialog}
-	on:close={() => (showModal = false)}
-	on:click|self={() => dialog.close()}
->
-	<div on:click|stopPropagation>
-		<slot name="header" />
-		<hr />
-		<slot />
-		<hr />
-		<!-- svelte-ignore a11y-autofocus -->
-		<button autofocus on:click={() => dialog.close()}>close modal</button>
+	import { closeModal } from 'svelte-modals'
+  
+	// provided by <Modals />
+	export let isOpen
+  
+	export let title
+	export let message
+  
+  </script>
+  
+  {#if isOpen}
+	<div role="dialog" class="modal">
+	  <div class="contents">
+		<h2>{title}</h2>
+		<p>{message}</p>
+		<div class="actions">
+		  <button on:click={closeModal}>OK</button>
+		</div>
+	  </div>
 	</div>
-</dialog>
-
-<style>
-	dialog {
-		max-width: 32em;
-		border-radius: 0.2em;
-		border: none;
-		padding: 0;
+  {/if}
+  
+  <style>
+	.modal {
+	  position: fixed;
+	  top: 0;
+	  bottom: 0;
+	  right: 0;
+	  left: 0;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+  
+	  /* allow click-through to backdrop */
+	  pointer-events: none;
 	}
-	dialog::backdrop {
-		background: rgba(0, 0, 0, 0.3);
+  
+	.contents {
+	  min-width: 240px;
+	  border-radius: 6px;
+	  padding: 16px;
+	  background: white;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: space-between;
+	  pointer-events: auto;
 	}
-	dialog > div {
-		padding: 1em;
+  
+	h2 {
+	  text-align: center;
+	  font-size: 24px;
 	}
-	dialog[open] {
-		animation: zoom 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+	p {
+	  text-align: center;
+	  margin-top: 16px;
 	}
-	@keyframes zoom {
-		from {
-			transform: scale(0.95);
-		}
-		to {
-			transform: scale(1);
-		}
+  
+	.actions {
+	  margin-top: 32px;
+	  display: flex;
+	  justify-content: flex-end;
 	}
-	dialog[open]::backdrop {
-		animation: fade 0.2s ease-out;
-	}
-	@keyframes fade {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-	button {
-		display: block;
-	}
-</style>
+  
+  </style>

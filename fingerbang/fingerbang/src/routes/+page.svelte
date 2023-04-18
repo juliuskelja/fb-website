@@ -2,7 +2,19 @@
 <script>
     import Carousel from './Carousel.svelte';
     import Trailer from './Trailer.svelte';
+    
+    import { openModal } from 'svelte-modals'
+    import Modal from './Modal.svelte'
+
+    window.onload = function() {
+        handleClick();
+    }
+    function handleClick() {
+    openModal(Modal, { title: "Alert", message: "This is an alert" })
+  }
+
 </script>
+
 
 <div class="contents ctrailer">
 
