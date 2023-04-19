@@ -2,19 +2,25 @@
 <script>
     import Carousel from './Carousel.svelte';
     import Trailer from './Trailer.svelte';
-    
     import { openModal } from 'svelte-modals'
-    import Modal from './Modal.svelte'
+    import Modal from './Modal.svelte';
+    import { browser } from '$app/environment';
 
-    window.onload = function() {
-        handleClick();
-    }
+    // Show the modal only once per session:
+    if (browser) {
+        let modalShown = localStorage.getItem('modalShown');
+        if (!modalShown) {
+            handleClick();
+            localStorage.setItem('modalShown', 1)
+            }
+            }
+
+    // Function to open the modal and set values
     function handleClick() {
-    openModal(Modal, { title: "Alert", message: "This is an alert" })
+    openModal(Modal, { title: "Hold up!", message: "Before you enter the website, please read the following. The developers of Fingerbang describe the content of the game like this:", message2: "'Depicts cartoon violence and gore, use of fictional drugs and mildly crude language.'", message3: "Contents of the game will be shown on this website. Do you still wish to continue?" })
   }
 
 </script>
-
 
 <div class="contents ctrailer">
 

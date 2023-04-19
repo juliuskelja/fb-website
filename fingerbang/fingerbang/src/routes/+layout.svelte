@@ -17,6 +17,9 @@
 <div id="page-container">
     <div id="content-wrap">
 <div class="app">
+
+    
+    
     <Header />
 
     <main>
@@ -32,13 +35,14 @@
 </div>
 
 <style>
-        .backdrop {
+    .backdrop {
       position: fixed;
       top: 0;
       bottom: 0;
       right: 0;
       left: 0;
-      background: rgba(0,0,0,0.50)
+      z-index:10;
+      background: rgba(0,0,0,0.5)
     }
 .scrolling-image-container {
     overflow: hidden;
@@ -46,15 +50,19 @@
 .scrolling-image {
     z-index:-1;
     top:0;
+    width:5076px;
+    height: 900px;
     position: fixed;
-    width: 3200px; /* img width x2 */
-    height: 100%;
-    background: url("/images/mainmenu_placeholder.png") repeat-x;
-    animation: verticAnim 50s linear infinite;
+    background-image: url("/images/mainmenu_placeholder.png");
+    background-repeat:  repeat-x;
+    animation: verticAnim 60s linear infinite;
 }
 @keyframes verticAnim {
+    from {
+        transform: translate3d(0,0,0)
+    }
     to {
-        transform: translate(-1600px);
+        transform: translate3d(-1600px, 0,0);
     }
 }
 </style>
