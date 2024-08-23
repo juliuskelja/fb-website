@@ -1,25 +1,27 @@
-<div class="video-container">
-<iframe class="video" src="https://www.youtube.com/embed/dTAOCBWosVg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="trailer">
+	<iframe
+		class="youtube-video"
+		src="https://www.youtube.com/embed/dTAOCBWosVg?si=PZkKWEH9owUQDhzs&amp;controls=0"
+		title="YouTube video player"
+		frameborder="0"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+		referrerpolicy="strict-origin-when-cross-origin"
+		allowfullscreen
+		id="trailerframe"
+	/>
 </div>
 
 <style>
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  box-shadow: 0px 0px 15px rgb(21, 21, 21);
-  border: 2px solid black;
-}
+	.trailer {
+		width: 50vw;
+	}
+	#trailerframe {
+		border: 3px solid black;
+		box-shadow: 0 0 10px black;
+	}
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.video {
-  aspect-ratio: 16 / 9;
-  width: 100%;
-}
-
+	.youtube-video {
+		aspect-ratio: 16 / 9;
+		width: 100%;
+	}
 </style>

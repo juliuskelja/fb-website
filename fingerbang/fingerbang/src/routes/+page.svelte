@@ -1,59 +1,106 @@
 <!--This is the frontpage!-->
 <script>
-    import Carousel from './Carousel.svelte';
-    import Trailer from './Trailer.svelte';
-    import { openModal } from 'svelte-modals'
-    import Modal from './Modal.svelte';
-    import { browser } from '$app/environment';
+	import Carousel from './Carousel.svelte';
+	import Creators from './Creators.svelte';
+	import { openModal } from 'svelte-modals';
+	import Modal from './Modal.svelte';
+	import { browser } from '$app/environment';
+	import Features from './Features.svelte';
+	import Intro from './Intro.svelte';
+	import Trailer from './Trailer.svelte';
+	import { onMount } from 'svelte';
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-    // Show the modal only once per session:
-    if (browser) {
-        let modalShown = localStorage.getItem('modalShown');
-        if (!modalShown) {
-            handleClick();
-            localStorage.setItem('modalShown', 1)
-            }
-            }
+	onMount(() => {
+		// import scrolltrigger
+		gsap.registerPlugin(ScrollTrigger);
+		// trailer scrolltrigger
+		gsap.fromTo(
+			'.two',
+			{ yPercent: 0 },
+			{
+				scrollTrigger: {
+					trigger: '.two',
+					markers: true,
+					id: 'trailer'
+				},
+				opacity: 1,
+				yPercent: -50,
+				duration: 3
+			}
+		);
+		// screenshots
+		const ssTimeline = gsap.timeline();
+		let ssSections = gsap.utils.toArray('.three .ssimg');
+		console.log(ssSections.length);
+		ssTimeline.from('.ss-2', { xPercent: 100 }).from('.ss-3', { xPercent: 100 });
+		ScrollTrigger.create({
+			animation: ssTimeline,
+			trigger: '.three',
+			markers: true,
+			id: 'screenshots',
+			start: 'top 30%',
+			end: 'max',
+			pin: true,
+			scrub: true,
+			endTrigger: '.four',
 
-    // Function to open the modal and set values
-    function handleClick() {
-    openModal(Modal, { title: "Hold up!", message: "Before you enter the website, please read the following. The developers of Fingerbang describe the content of the game like this:", message2: "'Depicts cartoon violence and gore, use of fictional drugs and mildly crude language.'", message3: "Contents of the game will be shown on this website. Do you still wish to continue?" })
-  }
+			toggleClass: '.end'
+		});
+	});
+	// Show the modal only once per session:
+	if (browser) {
+		let modalShown = localStorage.getItem('modalShown');
+		if (!modalShown) {
+			handleClick();
+			localStorage.setItem('modalShown', 1);
+		}
+	}
 
+	// Function to open the modal and set values
+	function handleClick() {
+		openModal(Modal, {
+			title: 'Hold up!',
+			message:
+				'Before you enter the website, please read the following. The developers of Fingerbang describe the content of the game like this:',
+			message2:
+				"'Depicts cartoon violence and gore, use of fictional drugs and mildly crude language.'",
+			message3: 'Contents of the game will be shown on this website. Do you still wish to continue?'
+		});
+	}
 </script>
 
-<div class="contents ctrailer">
-
-<article id="trailer">
-    <Trailer />
-</article>
-
-    <div class="contents-1">
-<article id="download">
-    <h1 style="margin-top:0">Get on Steam</h1>
-    <iframe title="Install Game" src="https://store.steampowered.com/widget/2200380/" frameborder="0" id="getOnSteam" ></iframe>
-</article>
-
-
-<article id="intro">
-    <h1>About Fingerbang</h1>
-    <p>
-        FingerBang: All Bullets Pointin' is a first person shooter game taking inspiration from the “boomer shooter” games of old. It combines elements from games both old and new, and includes a ranking system based on player performance.
-    </p>
-    <p>
-        You play as a former police officer taking justice in your own hands (literally), as you tear your way through the criminal element of the city, trying to put an end to the manufacturing and spreading of a dangerous new drug known as Strutusol.
-    </p>
-
-    <h1>Features</h1>
-    ...
-</article>
-
-<div id="screenshots-bg">
-<article id="screenshots">
-<Carousel />
-</article></div>
-
-
+<div class="section one">
+	<Intro />
 </div>
 
+<div class="section two" style="opacity:0">
+	<Trailer />
+</div>
+
+<div class="section three">
+	<img class="ss-img" src="/images/ss_00.png" alt="First screenshot" />
+	<div class="ssimg ss-2">
+		<img class="ss-img" src="/images/ss_01.png" alt="Second screenshot" />
+	</div>
+	<div class="ssimg ss-3">
+		<img class="ss-img" src="/images/ss_02.png" alt="Third screenshot" />
+	</div>
+</div>
+
+<div class="section four" />
+
+<div class="contents" style="display:none">
+	<div id="features">
+		<img class="ss-img" src="/images/ss_01.png" alt="Second screenshot" />
+		<Features />
+	</div>
+	<div id="screenshots">
+		<Carousel />
+	</div>
+
+	<div id="creators">
+		<Creators />
+	</div>
 </div>

@@ -1,0 +1,68 @@
+<script>
+	import { onMount } from 'svelte';
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
+	onMount(() => {
+		// import scrolltrigger
+		gsap.registerPlugin(ScrollTrigger);
+		// intro timeline
+		const tlIntro = gsap.timeline();
+
+		gsap.to('.introimg', {
+			scrollTrigger: {
+				trigger: '.introimg'
+			},
+			opacity: 1,
+			duration: 3,
+			onComplete: () => {
+				gsap.fromTo(
+					'.introtext',
+					{ opacity: 0, yPercent: 50 },
+					{ opacity: 1, duration: 2, yPercent: 0 }
+				);
+			}
+		});
+	});
+</script>
+
+<div id="top">
+	<div id="introflex">
+		<img
+			src="/images/library_logo_fingerbang.png"
+			alt="Fingerbang logo"
+			style="width: 80%;padding-bottom:2rem; opacity:0"
+			class="introimg"
+		/>
+		<div class="introtext" style="opacity:0">
+			<article id="toptext">
+				<p>
+					Fingerbang: All Bullets Pointin' is a first person shooter game taking inspiration from
+					the “boomer shooter” games of old. It combines elements from games both old and new, and
+					includes a ranking system based on player performance.
+				</p>
+				<p>
+					You play as a former police officer taking justice in your own hands (literally), as you
+					tear your way through the criminal element of the city, trying to put an end to the
+					manufacturing and spreading of a dangerous new drug known as Strutusol.
+				</p>
+			</article>
+		</div>
+	</div>
+</div>
+
+<style>
+	#introflex {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	#toptext {
+		max-width: 700px;
+		background-color: rgba(0, 0, 0, 0.9);
+		border: 3px solid #63016d;
+		border-radius: 15px;
+		padding: 1rem;
+	}
+</style>
