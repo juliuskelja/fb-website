@@ -17,7 +17,7 @@ ul, li {
 #content-wrap { /*Content won't go behind footer*/
     padding-bottom: 5rem;
 }
-  
+
 img {
     max-width:100%;
     height:auto;
@@ -27,6 +27,11 @@ p {
     text-align:left;
 }
 
+main {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+}
 
 .contents {
     display:flex;
@@ -50,6 +55,17 @@ h1 {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-family: 'public pixel';
+    font-size:1.5rem;
+    text-align:center;
+    margin-bottom: 3rem;
+    padding-top: 3rem;
+    text-transform: uppercase;
+    font-weight:900;
+    color:white
 }
 
 #screenshots {
@@ -81,31 +97,40 @@ body {
 }
 
 .one {
-    height: 100vh;
+    margin-top:5%;
+}
+
+.two {
+    margin-top: 50vh;
 }
 
 .three {
-    width: 50vw;
     position:relative;
-    overflow: hidden;
-}
-.four {
-    width: 50vw;
+    display: flex;
+    flex-direction: row;
     height: 50vh;
-    background:black;
-    border: 1px solid blue;
+    flex-wrap:nowrap
 }
-
 .ssimg {
-    position:absolute;
-    top:0;
+    padding:2px
 }
-.ssimg.end {
-    position:relative
+.ssimg img {
+    width: 50%;
 }
 
-main {
-    display:flex;
-    flex-direction: column;
-    align-items:center;
+.four {
+    margin-top: 30vh;
 }
+.four h2 {
+    margin-top: 20vh;
+}
+
+.ranks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Spritesheet animations */

@@ -6,27 +6,22 @@
 	onMount(() => {
 		// import scrolltrigger
 		gsap.registerPlugin(ScrollTrigger);
-		// intro timeline
-		const tlIntro = gsap.timeline();
-
+		gsap.fromTo(
+			'.introtext',
+			{ opacity: 0, yPercent: 50 },
+			{ opacity: 1, duration: 2, yPercent: 0 }
+		);
 		gsap.to('.introimg', {
 			scrollTrigger: {
 				trigger: '.introimg'
 			},
 			opacity: 1,
-			duration: 3,
-			onComplete: () => {
-				gsap.fromTo(
-					'.introtext',
-					{ opacity: 0, yPercent: 50 },
-					{ opacity: 1, duration: 2, yPercent: 0 }
-				);
-			}
+			duration: 3
 		});
 	});
 </script>
 
-<div id="top">
+<div class="section one">
 	<div id="introflex">
 		<img
 			src="/images/library_logo_fingerbang.png"
