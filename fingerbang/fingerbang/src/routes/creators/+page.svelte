@@ -1,3 +1,12 @@
+<script>
+	import { onMount } from 'svelte';
+	onMount(() => {
+		// Reset ScrollTrigger
+		ScrollTrigger.clearScrollMemory();
+		window.history.scrollRestoration = 'manual';
+	});
+</script>
+
 <div class="contents normal">
 	<h1>Creators</h1>
 	<p>
@@ -36,19 +45,3 @@
 		</li>
 	</ul>
 </div>
-
-<style>
-	.creators {
-		text-align: left;
-	}
-	.creators li {
-		padding: 0.8rem;
-	}
-	.normal {
-		margin-top: 3rem;
-		padding-left: 3rem;
-		padding-right: 3rem;
-		padding-bottom: 1rem;
-		width: 80%;
-	}
-</style>

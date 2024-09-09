@@ -71,7 +71,7 @@
 	}
 
 	.contents {
-		border: 3px solid #828282;
+		border: 2px solid #4a025e;
 		min-width: 240px;
 		border-radius: 6px;
 		padding: 3rem;

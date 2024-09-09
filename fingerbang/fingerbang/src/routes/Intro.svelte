@@ -9,14 +9,15 @@
 		gsap.fromTo(
 			'.introtext',
 			{ opacity: 0, yPercent: 50 },
-			{ opacity: 1, duration: 2, yPercent: 0 }
+			{ opacity: 1, duration: 2, yPercent: 0, delay: 4 }
 		);
 		gsap.to('.introimg', {
 			scrollTrigger: {
 				trigger: '.introimg'
 			},
 			opacity: 1,
-			duration: 3
+			duration: 3,
+			delay: 3
 		});
 	});
 </script>
@@ -26,7 +27,7 @@
 		<img
 			src="/images/library_logo_fingerbang.png"
 			alt="Fingerbang logo"
-			style="width: 80%;padding-bottom:2rem; opacity:0"
+			style="width: 80%;padding-bottom:1rem; opacity:0"
 			class="introimg"
 		/>
 		<div class="introtext" style="opacity:0">
@@ -59,5 +60,6 @@
 		border: 3px solid #63016d;
 		border-radius: 15px;
 		padding: 1rem;
+		margin: 2rem;
 	}
 </style>

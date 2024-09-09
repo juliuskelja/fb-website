@@ -1,10 +1,21 @@
-<footer>
-	<div class="footer-text">© 2024 Fingerlab</div>
+<script>
+	import { onMount } from 'svelte';
+	onMount(() => {
+		// Reset ScrollTrigger
+		ScrollTrigger.clearScrollMemory();
+		window.history.scrollRestoration = 'manual';
+	});
+</script>
 
-	<div class="verticalline" />
+<div class="contents normal">
+	<h1 style="margin-bottom:2rem">Contact</h1>
 
+	<h2>Email</h2>
+	<p class="email">fingerlabofficial[at]gmail.com</p>
+
+	<h2 style="margin-bottom:0">Social Medias</h2>
 	<!--Social medias-->
-	<div id="socialmedias">
+	<div id="socialmedias" style="padding:3rem">
 		<div class="smedia-item">
 			<a href="https://www.facebook.com/profile.php?id=100089280056541">
 				<img src="/images/facebook.png" alt="Facebook icon" /></a
@@ -26,20 +37,11 @@
 			>
 		</div>
 	</div>
-</footer>
+</div>
 
 <style>
-	footer {
-		background-color: #010101;
-		height: 5rem;
-		width: 100%;
-		bottom: 0;
-		position: absolute;
-		font-family: 'public pixel' !important;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 0;
-		margin: 0;
+	.email {
+		text-align: center;
+		font-size: 1.3rem;
 	}
 </style>

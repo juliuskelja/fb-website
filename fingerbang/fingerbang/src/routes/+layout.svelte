@@ -34,8 +34,8 @@
 		right: 0;
 		left: 0;
 		z-index: 11;
-		background: url('/images/mainmenu_placeholder.png');
-		background-size: contain;
+		background-color: black;
 		pointer-events: none;
+		overflow: hidden;
 	}
 </style>

@@ -11,20 +11,23 @@
 		<!--Navigation links-->
 		<div id="navitem-container">
 			<div class="navitem">
-				<a href="#topofpage">Link</a>
+				<a href="/">Home</a>
 			</div>
 			<div class="navitem">
-				<a href="#features">Link</a>
+				<a href="/creators">Creators</a>
 			</div>
 			<div class="navitem">
-				<a href="#creators">Link</a>
+				<a href="/contact">Contact</a>
 			</div>
 		</div>
-
+		<!--Hamburger menu-->
+		<div class="hamburger">
+			<img src="/images/menu.png" alt="Hamburger Menu Icon" />
+		</div>
 		<!--Play Free button-->
 		<div class="playButtonDiv">
 			<a href="https://store.steampowered.com/app/2200380/Fingerbang_All_Bullets_Pointin/">
-				<div class="playfreeButton">Play Free</div>
+				<div class="playfreeButton">Download</div>
 			</a>
 		</div>
 	</nav>
@@ -60,6 +63,15 @@
 		margin-left: auto;
 		margin-right: 1rem;
 	}
+
+	.hamburger {
+		margin-right: 1rem;
+		margin-left: auto;
+	}
+	.hamburger img {
+		height: auto;
+		max-width: 50px;
+	}
 	.playfreeButton {
 		height: 50px;
 		width: 250px;
@@ -84,7 +96,7 @@
 	}
 
 	.navitem {
-		margin: 5px;
+		margin: 1rem;
 	}
 
 	.navitem a {

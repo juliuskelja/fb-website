@@ -13,7 +13,7 @@
 				scrollTrigger: {
 					trigger: '.two',
 					end: 'top center',
-					scrub: true
+					scrub: 1.1
 				},
 				opacity: 1,
 				y: '-30vh',
@@ -23,7 +23,7 @@
 	});
 </script>
 
-<div class="section two" style="opacity:0">
+<div class="section two">
 	<div class="trailer">
 		<iframe
 			class="youtube-video"
@@ -39,9 +39,6 @@
 </div>
 
 <style>
-	.trailer {
-		width: 50vw;
-	}
 	#trailerframe {
 		border: 3px solid black;
 		box-shadow: 0 0 10px black;

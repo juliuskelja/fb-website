@@ -1,6 +1,5 @@
 <!--This is the frontpage!-->
 <script>
-	import Creators from './Creators.svelte';
 	import { openModal } from 'svelte-modals';
 	import Modal from './Modal.svelte';
 	import { browser } from '$app/environment';
@@ -8,7 +7,14 @@
 	import Intro from './Intro.svelte';
 	import Trailer from './Trailer.svelte';
 	import Screenshots from './Screenshots.svelte';
-	import Screenshots2 from './Screenshots.svelte';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		handleClick();
+		// Reset ScrollTrigger
+		ScrollTrigger.clearScrollMemory();
+		window.history.scrollRestoration = 'manual';
+	});
 
 	// Show the modal only once per session:
 	if (browser) {
@@ -34,13 +40,19 @@
 
 <Intro />
 <Trailer />
-<!--<Screenshots />-->
+<Screenshots />
 <Features />
 
-<section style="height:100vh" />
+<div class="footer-bg" />
 
-<div class="contents" style="display:none">
-	<div id="creators">
-		<Creators />
-	</div>
-</div>
+<style>
+	.footer-bg {
+		background-image: url('/images/footer_background.png');
+		background-position: bottom;
+		background-repeat: repeat-x;
+		background-size: contain;
+		position: relative;
+		height: 265px;
+		width: 100vw;
+	}
+</style>
