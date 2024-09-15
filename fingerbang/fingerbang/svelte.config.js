@@ -9,9 +9,9 @@ const config = {
 
     kit: {
         adapter: adapter(),
-				paths: {
-					base: process.env.NODE_ENV === 'production' ? '/fb-website' : '',
-			}
+        paths: {
+            base: dev ? '' : process.env.BASE_PATH,
+        }
     }
 };
 
