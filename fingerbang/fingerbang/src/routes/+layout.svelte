@@ -3,6 +3,8 @@
 	import Footer from './Footer.svelte';
 	import './styles.css';
 	import { Modals, closeModal } from 'svelte-modals';
+	// This can be false if you're using a fallback (i.e. SPA mode)
+	export const prerender = true;
 </script>
 
 <!--pop-up modal when entering site-->
