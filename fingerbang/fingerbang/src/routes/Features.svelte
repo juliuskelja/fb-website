@@ -61,12 +61,13 @@
 </script>
 
 <div class="section four">
+	<!--Start of area-->
 	<div class="area">
 		<!--Enemies-->
 		<h2 class="enemyH2">Fight your way through enemies</h2>
 		<div class="enemies pixelart">
 			<div class="e">
-				<img class="enemy e-1 pixelart" src="images/enemy3.png" alt="Enemy" />
+				<img class="enemy e-1" src="images/enemy3.png" alt="Enemy" />
 			</div>
 			<div class="e">
 				<img class="enemy e-2" src="images/enemy3.png" alt="Enemy" />
@@ -82,7 +83,9 @@
 	</div>
 	<!--End of area-->
 
+	<!--Container for ranks and download-->
 	<div class="rd-container">
+		<!--Ranks-->
 		<div class="panel">
 			<h2 class="rankH2">Hone Your Skills for a Better Rank!</h2>
 			<div class="ranks">
@@ -106,7 +109,9 @@
 				</div>
 			</div>
 		</div>
+		<!--End of ranks-->
 
+		<!--Download-->
 		<div class="download">
 			<h1 id="downloadH1">Download now</h1>
 
@@ -121,7 +126,9 @@
 				/>
 			</div>
 		</div>
+		<!--End of download-->
 	</div>
+	<!--End of container for ranks and download-->
 </div>
 
 <style>

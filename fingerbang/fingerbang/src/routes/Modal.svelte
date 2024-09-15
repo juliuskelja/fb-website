@@ -2,9 +2,8 @@
 	import { closeModal } from 'svelte-modals';
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
-	// provided by <Modals />
-	export let isOpen;
 
+	export let isOpen;
 	export let title;
 	export let message;
 	export let message2;

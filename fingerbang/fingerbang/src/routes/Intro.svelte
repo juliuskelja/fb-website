@@ -1,24 +1,21 @@
 <script>
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 	onMount(() => {
-		// import scrolltrigger
-		gsap.registerPlugin(ScrollTrigger);
+		gsap.fromTo(
+			'.introimg',
+			{ opacity: 0 },
+			{
+				opacity: 1,
+				duration: 3
+			}
+		);
 		gsap.fromTo(
 			'.introtext',
 			{ opacity: 0, yPercent: 50 },
-			{ opacity: 1, duration: 2, yPercent: 0, delay: 4 }
+			{ opacity: 1, duration: 2, yPercent: 0, delay: 3 }
 		);
-		gsap.to('.introimg', {
-			scrollTrigger: {
-				trigger: '.introimg'
-			},
-			opacity: 1,
-			duration: 3,
-			delay: 3
-		});
 	});
 </script>
 
@@ -27,10 +24,10 @@
 		<img
 			src="/images/library_logo_fingerbang.png"
 			alt="Fingerbang logo"
-			style="width: 80%;padding-bottom:1rem; opacity:0"
+			style="width: 80%;padding-bottom:1rem;"
 			class="introimg"
 		/>
-		<div class="introtext" style="opacity:0">
+		<div class="introtext">
 			<article id="toptext">
 				<p>
 					Fingerbang: All Bullets Pointin' is a first person shooter game taking inspiration from

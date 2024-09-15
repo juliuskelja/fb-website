@@ -1,7 +1,5 @@
 <!--This is the frontpage!-->
 <script>
-	import { openModal } from 'svelte-modals';
-	import Modal from './Modal.svelte';
 	import { browser } from '$app/environment';
 	import Features from './Features.svelte';
 	import Intro from './Intro.svelte';
@@ -9,8 +7,9 @@
 	import Screenshots from './Screenshots.svelte';
 	import { onMount } from 'svelte';
 
+	import { openModal } from 'svelte-modals';
+	import Modal from './Modal.svelte';
 	onMount(() => {
-		handleClick();
 		// Reset ScrollTrigger
 		ScrollTrigger.clearScrollMemory();
 		window.history.scrollRestoration = 'manual';
