@@ -7,7 +7,7 @@ const config = {
 				fallback: 'app.html'
 			}),
 			paths: {
-					base: process.env.NODE_ENV === 'production' ? '/fb-website/build' : '',
+					base: process.env.NODE_ENV === 'production' ? '/fb-website/app.html' : '',
 			}
 	}
 };
