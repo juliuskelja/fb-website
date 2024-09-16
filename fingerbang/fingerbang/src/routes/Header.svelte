@@ -1,7 +1,3 @@
-<script>
-	import { base } from '$app/paths';
-</script>
-
 <header>
 	<nav>
 		<!--Logo-->
@@ -15,13 +11,13 @@
 		<!--Navigation links-->
 		<div id="navitem-container">
 			<div class="navitem">
-				<a href="{base}/">Home</a>
+				<a href="/">Home</a>
 			</div>
 			<div class="navitem">
-				<a href="{base}/creators">Creators</a>
+				<a href="/creators">Creators</a>
 			</div>
 			<div class="navitem">
-				<a href="{base}/contact">Contact</a>
+				<a href="/contact">Contact</a>
 			</div>
 		</div>
 		<!--Hamburger menu-->
